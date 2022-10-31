@@ -5,10 +5,10 @@
 </section>
 
 <section align="center">
-<a href="https://github.com/daniquemois/sturdy-broccoli/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/daniquemois/sturdy-broccoli"></a>
-<a href="https://github.com/daniquemois/sturdy-broccoli/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/daniquemois/sturdy-broccoli"></a>
-<a href="https://github.com/daniquemois/sturdy-broccoli/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/daniquemois/sturdy-broccoli"></a>
-<a href="https://github.com/daniquemois/sturdy-broccoli/blob/main/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/daniquemois/sturdy-broccoli"></a>
+<a href="https://img.shields.io/github/issues/daniquemois/tech-track-22-23"><img alt="GitHub issues" src="https://img.shields.io/github/issues/daniquemois/tech-track-22-23"></a>
+<a href="https://img.shields.io/github/forks/daniquemois/tech-track-22-23"><img alt="GitHub forks" src="https://img.shields.io/github/forks/daniquemois/tech-track-22-23"></a>
+<a href="https://img.shields.io/github/stars/daniquemois/tech-track-22-23"><img alt="GitHub stars" src="https://img.shields.io/github/stars/daniquemois/tech-track-22-23"></a>
+<a href="https://img.shields.io/github/license/daniquemois/tech-track-22-23"><img alt="GitHub license" src="https://img.shields.io/github/license/daniquemois/tech-track-22-23"></a>
   </section>
 
 <p align="right">(<a href="#start">terug naar start</a>)</p>
@@ -20,7 +20,7 @@
       <li><a href="#voorwoord">Voorwoord</a></li>
       <li><a href="#inleiding">Inleiding</a></li>
       <li><a href="#idee">Doel & algemene informatie</a></li>
-      <li><a href="#installatie">⚙Installatie</a></li>
+      <li><a href="#installatie">Installatie</a></li>
       <li><a href="#license">License</a></li>
     </ul>
   </section>
