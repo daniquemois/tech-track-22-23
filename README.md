@@ -10,8 +10,6 @@
 <a href="https://img.shields.io/github/stars/daniquemois/tech-track-22-23"><img alt="GitHub stars" src="https://img.shields.io/github/stars/daniquemois/tech-track-22-23"></a>
 <a href="https://img.shields.io/github/license/daniquemois/tech-track-22-23"><img alt="GitHub license" src="https://img.shields.io/github/license/daniquemois/tech-track-22-23"></a>
   </section>
-
-<p align="right">(<a href="#start">terug naar start</a>)</p>
   
 <section>
   <h2 style="color: #F54E4F">Inhoudsopgave</h2>
