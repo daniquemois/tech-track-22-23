@@ -35,8 +35,8 @@
 </section>
   
 <section>
-  <h2 id="idee">Doel & algemene informatie</h2>
-  <p>Nog even invullen <a href="https://github.com/daniquemois/tech-track-22-23/wiki">Concept</a>
+  <h2 id="idee">Concept</h2>
+  <p>Het doel van deze repository</p>
 </section>
   
 <section>
