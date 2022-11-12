@@ -1,0 +1,22 @@
+#aSide {
+    height: 600px;
+    width: 600px;
+    position: absolute;
+    top: calc(50% - 250px);
+    right: 7%;
+}
+model-viewer {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    pointer-events: none;
+    border: none;
+    z-index: 1;
+    transform: translateX(150px) translateY(120px);
+}
+.music.change {
+    height: 300px;
+    width: 300px;
+    transform: rotateX(15deg) translateX(280px) translateY(60px);
+    transition: transform 2s;
+  }

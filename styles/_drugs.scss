@@ -1,0 +1,52 @@
+.drugs{
+    background-color: white;
+    padding: 1em;
+    aspect-ratio: 1 / 2;
+    display: flex;
+    position: absolute;
+}
+.wiet{
+    top: 5em;
+    left: 5em;
+    transform: rotate(-14deg);
+}
+.cocaine{
+    top: 12em;
+    right: 40em;
+    transform: rotate(-13deg);
+}
+.ectasy{
+    top: 23em;
+    left: 23em;
+    transform: rotate(-13deg);
+}
+.amfetamine{
+    top: 28em;
+    right: 30em;
+    transform: rotate(13deg);
+}
+.ghb{
+    top: 30em;
+    left: 10em;
+    transform: rotate(13deg);
+}
+.lachgas{
+    top: 3em;
+    left: 25em;
+    transform: rotate(16deg);
+}
+.ketamine{
+    top: 27em;
+    right: 14em;
+    transform: rotate(-16deg);
+}
+.alcohol{
+    top: 5em;
+    right: 24em;
+    transform: rotate(6deg);
+}
+.tabak{
+    bottom: 5em;
+    left: 34em;
+    transform: rotate(26deg);
+}

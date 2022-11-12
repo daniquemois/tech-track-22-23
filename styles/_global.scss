@@ -31,7 +31,7 @@ body {
   }
   
   .table.change {
-    transform: rotateX(0deg) translateY(0rem) translateZ(-20rem);
+    transform: rotateX(60deg) translateY(-15rem) translateZ(-15rem);
     transition: transform 2s;
   }
   
@@ -77,12 +77,4 @@ body {
     border-bottom: 0.3rem solid rgba(63, 42, 21, 0.8);
     top: 0rem;
     right: 0rem;
-  }
-  .floor {
-    width: 160rem;
-    height: 160rem;
-    border-radius: 50%;
-    position: absolute;
-    transform: translateZ(-23rem);
-    box-shadow: inset -5rem -5rem 10rem #000, inset 5rem 5rem 10rem #000;
   }
