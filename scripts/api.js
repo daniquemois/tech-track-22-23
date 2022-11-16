@@ -1,47 +1,53 @@
-// Hier halen we de spreadsheet op
-const CONFIG = {
-	// dit is alle info die nodig is om de spreadhsheet op te halen
-	spreadsheetId: '1F3DBuLeR1-vDdglypceSc6ci6vNgcQ15R2Y33Q0kXuo',
-	spreadsheetName: 'Blad1'
-}
+// const seconds = 10;
 
-// Dit haalt de API link op
-async function getData() {
-	let res = await fetch(`https://opensheet.elk.sh/${CONFIG.spreadsheetId}/${CONFIG.spreadsheetName}`)
-	return await res.json();
-}
-
-// Hier halen we de gegevens op en hiermee kunnen we ook stijlen
-function gegevensOphalen(data) {
-	let main = document.querySelector('main');
+// function getData() {
+// 	console.log('Grabbing new userdata...');
 	
-	console.log(data);
-	// we willen dat de data verschillende items bevat
-	data.forEach(item => {
-		// de let zorgt ervoor dat het element aangemaakt word
-		let container = document.createElement('article');
+// 	fetch('https://opensheet.elk.sh/1KqzNQUVOkJ1Miw6TlSb5jvmERoKaKZhFU1NUqonl5f0/1')
+// 		.then(res => res.json())
+// 		.then(data => {
+// 			console.log(data);
 		
-		let continent = document.createElement('h2');
-		continent.textContent = item['Continent'];
+// 			let newArray = [];
+            
+//          data.forEach(item => {
+//                 newArray.push(item["Soort drugs"])
+//             })
+                  
 		
-		let land = document.createElement('h3');
-		land.textContent = item['Land'];
-		
-		let tijdzone = document.createElement('p');
-		tijdzone.textContent = item['Tijdzone'];
-		
-		container.appendChild(continent);
-		container.appendChild(land);
-		container.appendChild(tijdzone);
+// 		const upper = newArray.map(element => {
+// 			return element.charAt(0).toUpperCase() + element.slice(1);
+// 		}).filter(element => {
+//       return element !== "";
+//     }).sort();
+        
+//       console.log(upper);
+//     var options = [upper];
+    
+//     function makeUL(array) {
+//     // Create the list element:
+//     var list = document.createElement('ul');
 
-		main.appendChild(container);
-	})
+//     for(var i = 0; i < array.length; i++) {
+//         // Create the list item:
+//         var item = document.createElement('li');
 
-}
+//         // Set its contents:
+//         item.appendChild(document.createTextNode(array[i]));
 
-if(document.querySelector('main')) {
-	getData()
-	.then(data => {	
-        gegevensOphalen(data);
-	})
-}
+//         // Add it to the list:
+//         list.appendChild(item);
+//     }
+
+//     // Finally, return the constructed list:
+//     return list;
+// }
+
+// document.getElementById('lijst').appendChild(makeUL(options[0]));
+// 	})
+// }
+
+
+// setInterval(getData, seconds * 1000)
+
+// getData();

@@ -1,18 +1,19 @@
 #aSide {
-    height: 600px;
-    width: 600px;
+    height: 100%;
+    width: 100%;
     position: absolute;
     top: calc(50% - 250px);
     right: 7%;
 }
-model-viewer {
-    height: 200px;
-    width: 200px;
+.table3d {
+    height: 1000px;
+    width: 2000px;
     position: absolute;
     pointer-events: none;
     border: none;
     z-index: 1;
-    transform: translateX(150px) translateY(120px);
+    transform: translateX(-200px) translateY(-50px) ;
+    
 }
 .music.change {
     height: 300px;
