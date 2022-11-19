@@ -1,13 +1,20 @@
 body {
     background: black;
-    color: white;
-    font-family: arial black;
+    color: WHITE;
+    font-family: "Roboto mono";
     line-height: 10px;
   }
+  h2{
+    font-size: 20px;
+    font-family: "Roboto mono";
+    font-weight: 400;
+    margin-top: 2em;
+    line-height: 120%;
+}
   .room {
     width: 100%;
     height: 100vh;
-    background-color: white;
+    background-color: black;
     display: grid;
     place-items: center;
     perspective: 100rem;
@@ -85,5 +92,5 @@ body {
   .inspect{
     position: absolute;
     top: 15em;
-    z-index: 100;
+    z-index: 1;
   }

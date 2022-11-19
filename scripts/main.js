@@ -3,6 +3,7 @@ import '../styles/style.scss'
 import '../scripts/api.js';
 import '../scripts/audio.js';
 import '../scripts/three.js';
+import '../scripts/slotmachine.js';
 
 // We can use node_modules directely in the browser!
 import * as d3 from 'd3';

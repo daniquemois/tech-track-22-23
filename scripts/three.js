@@ -1,65 +1,148 @@
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import * as THREE from 'three'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js"
+import * as dat from 'lil-gui'
 
-	const scene = new THREE.Scene();
-			const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+/**
+ * Base
+ */
+// Debug
+const gui = new dat.GUI()
 
-			const renderer = new THREE.WebGLRenderer();
-			renderer.setSize( window.innerWidth, window.innerHeight );
-			document.body.appendChild( renderer.domElement );
+// Canvas
+const canvas = document.querySelector('canvas.webgl')
 
-			const geometry = new THREE.BoxGeometry( 2, 2, 2 );
-			const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-			const cube = new THREE.Mesh( geometry, material );
-			scene.add( cube );
+// Scene
+const scene = new THREE.Scene()
 
-			camera.position.z = 5;
-
-            const loader = new GLTFLoader();
-
-            loader.load( '../3dobjects/wooden_table/scene.gltf', function ( gltf ) {
-            
-                scene.add( gltf.scene );
-                gltf.textures;
-            
-            }, undefined, function ( error ) {
-            
-                console.error( error );
-            
-            } );
-            
-			function animate() {
-				requestAnimationFrame( animate );
-
-				cube.rotation.x += 0.01;
-				cube.rotation.y += 0.01;
-
-				renderer.render( scene, camera );
-			};
-
-			animate();
+// Models
+const gltfLoader = new GLTFLoader()
 
 
+gltfLoader.load(
+    '/models/wooden_table/scene.gltf',
+    (gltf) =>
+    {
+        const tafel = gltf.scene.children[0]
+        tafel.position.set(0, 0.5, 0)
 
+        if (scene){
+            scene.add(tafel)
+        }
+    }
+)
+gltfLoader.load(
+    '/models/music_cassette/scene.gltf',
+    (gltf) =>
+    {
+        const music = gltf.scene.children[0]
+        music.position.set(-.3, 1.005, -.8)
+        music.scale.set(2, 2, 2)
+        music.rotation.y += -1;
+        if (scene){
+            scene.add(music)
+        }
+    }
+)
+/**
+ * Floor
+ */
+const floor = new THREE.Mesh(
+    new THREE.PlaneGeometry(10, 10),
+    new THREE.MeshStandardMaterial({
+        color: '#444444',
+        metalness: 0,
+        roughness: 0.5
+    })
+)
+floor.receiveShadow = true
+floor.rotation.x = - Math.PI * 0.5
+scene.add(floor)
 
-// const scene = new THREE.Scene();
+/**
+ * Lights
+ */
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.8)
+scene.add(ambientLight)
 
-// const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+const directionalLight = new THREE.DirectionalLight(0xffffff, 0.6)
+directionalLight.castShadow = true
+directionalLight.shadow.mapSize.set(1024, 1024)
+directionalLight.shadow.camera.far = 15
+directionalLight.shadow.camera.left = - 7
+directionalLight.shadow.camera.top = 7
+directionalLight.shadow.camera.right = 7
+directionalLight.shadow.camera.bottom = - 7
+directionalLight.position.set(5, 5, 5)
+scene.add(directionalLight)
 
-// const loader = new GLTFLoader();
+/**
+ * Sizes
+ */
+const sizes = {
+    width: window.innerWidth,
+    height: window.innerHeight
+}
 
-// loader.load( '../3dobjects/wooden_table/scene.gltf', function ( gltf ) {
+window.addEventListener('resize', () =>
+{
+    // Update sizes
+    sizes.width = window.innerWidth
+    sizes.height = window.innerHeight
 
-// 	scene.add( gltf.scene );
+    // Update camera
+    camera.aspect = sizes.width / sizes.height
+    camera.updateProjectionMatrix()
 
-// }, undefined, function ( error ) {
+    // Update renderer
+    renderer.setSize(sizes.width, sizes.height)
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+})
 
-// 	console.error( error );
+/**
+ * Camera
+ */
+// Base camera
+const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
+camera.position.set(2, 2, 2)
+scene.add(camera)
 
-// } );
+// Controls
+const controls = new OrbitControls(camera, canvas)
+controls.target.set(0, 0.75, 0)
+controls.enableDamping = true
 
-// camera.position.z = 5;
+/**
+ * Renderer
+ */
+const renderer = new THREE.WebGLRenderer({
+    canvas: canvas
+})
+renderer.shadowMap.enabled = true
+renderer.shadowMap.type = THREE.PCFSoftShadowMap
+renderer.setSize(sizes.width, sizes.height)
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
+/**
+ * Animate
+ */
+const clock = new THREE.Clock()
+let previousTime = 0
 
-// scene.add( loader );
-// animate();
+const tick = () =>
+{
+    const elapsedTime = clock.getElapsedTime()
+    const deltaTime = elapsedTime - previousTime
+    previousTime = elapsedTime
+
+    // Update controls
+    controls.update()
+
+    // Render
+    renderer.render(scene, camera)
+
+    // Call tick again on the next frame
+    window.requestAnimationFrame(tick)
+}
+
+tick()

@@ -1,6 +1,6 @@
 #aSide {
-    height: 100%;
-    width: 100%;
+    height: 50%;
+    width: 50%;
     position: absolute;
     top: calc(50% - 250px);
     right: 7%;
@@ -13,11 +13,26 @@
     border: none;
     z-index: 1;
     transform: translateX(-200px) translateY(-50px) ;
-    
+}
+.music{
+    height: 100px;
+    width: 100px;
+    top: 13em;
+    left: 23em;
+    z-index: 10;
+    pointer-events: none;
+}
+.slot.interaction-prompt.cover.centered.visible{
+    display: none!important;
+}
+div#prompt{
+    transform: translateX(0px)!important;
 }
 .music.change {
-    height: 300px;
-    width: 300px;
-    transform: rotateX(15deg) translateX(280px) translateY(60px);
+    height: 200px;
+    width: 200px;
+    transform: translateX(420px) translateY(130px);
     transition: transform 2s;
+    top: 10px;
+    left: 0px;
   }

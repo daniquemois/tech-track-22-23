@@ -1,0 +1,26 @@
+.data{
+    background-color: white;
+    position: absolute;
+    height: 90%;
+    width: 90%;
+    padding: 1em;
+    z-index: 15;
+    .gebruikers{
+        background-color: green;
+        width: 40%;
+        padding: 1em;
+        h2{
+            font-size: 68px;
+            margin: 0px;
+            font-weight: 900;
+        }
+        h3{
+            margin: 0;
+            line-height: 130%;
+        }
+        // h2:after{
+        //     content: " volwassenen in Nederland hebben in het afgelopen halfjaar deze drug gebruikt";
+        //     font-size: 24px;
+        // }
+    }
+}
